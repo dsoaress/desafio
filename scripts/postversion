@@ -1,0 +1,8 @@
+#!/bin/sh
+
+git push --tags
+git push
+git checkout main
+git rebase development
+git push
+git checkout development
