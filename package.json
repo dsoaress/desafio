@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prestart": "yarn prisma:db:push"
+    "prestart": "yarn prisma:db:push",
     "start": "next start -p 3000",
     "prisma:db:push": "prisma db push --accept-data-loss --force-reset",
     "prisma:generate": "prisma generate",
