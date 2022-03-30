@@ -310,7 +310,6 @@ const Inscricoes: NextPage = () => {
                   <Input
                     label="Data de nascimento"
                     error={errors.birthdate?.message}
-                    disabled={isSubmitted}
                     {...inputProps}
                   />
                 )}
@@ -334,12 +333,7 @@ const Inscricoes: NextPage = () => {
                 onChange={field.onChange}
               >
                 {(inputProps: any) => (
-                  <Input
-                    label="CPF"
-                    error={errors.cpf?.message}
-                    {...inputProps}
-                    disabled={isSubmitted}
-                  />
+                  <Input label="CPF" error={errors.cpf?.message} {...inputProps} />
                 )}
               </InputMask>
             )}
@@ -370,12 +364,7 @@ const Inscricoes: NextPage = () => {
                 onChange={field.onChange}
               >
                 {(inputProps: any) => (
-                  <Input
-                    label="Telefone"
-                    error={errors.phone?.message}
-                    {...inputProps}
-                    disabled={isSubmitted}
-                  />
+                  <Input label="Telefone" error={errors.phone?.message} {...inputProps} />
                 )}
               </InputMask>
             )}
@@ -439,7 +428,6 @@ const Inscricoes: NextPage = () => {
                         label="Data de nascimento"
                         error={errors.students?.[index]?.birthdate?.message}
                         {...inputProps}
-                        disabled={isSubmitted}
                       />
                     )}
                   </InputMask>
