@@ -6,4 +6,4 @@ services:
     build: .
     restart: always
     volumes:
-      - .:/app
+      - .env:/app/.env
