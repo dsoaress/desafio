@@ -27,6 +27,7 @@
     "next": "12.1.0",
     "next-connect": "0.12.2",
     "next-s3-upload": "0.1.9",
+    "nextjs-cors": "^2.1.0",
     "nodemailer": "6.7.3",
     "prisma": "3.11.0",
     "react": "17.0.2",
@@ -36,7 +37,10 @@
     "react-icons": "4.3.1",
     "react-input-mask": "2.0.4",
     "react-pdf": "5.7.1",
+    "safe-json-stringify": "^1.2.0",
     "sharp": "^0.30.3",
+    "supertokens-auth-react": "^0.19.0",
+    "supertokens-node": "^9.1.1",
     "yup": "0.32.11"
   },
   "devDependencies": {
@@ -46,6 +50,7 @@
     "@types/react": "17.0.40",
     "@types/react-input-mask": "3.0.1",
     "@types/react-pdf": "5.0.9",
+    "@types/safe-json-stringify": "^1.1.2",
     "@types/uuid": "8.3.4",
     "autoprefixer": "10.4.2",
     "eslint": "8.11.0",
