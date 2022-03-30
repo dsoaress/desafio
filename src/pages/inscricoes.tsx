@@ -303,14 +303,14 @@ const Inscricoes: NextPage = () => {
             render={({ field }) => (
               <InputMask
                 mask="99/99/9999"
-                value={field.value}
+                value={isSubmitted ? '' : field.value}
                 onChange={field.onChange}
-                disabled={isSubmitted}
               >
                 {(inputProps: any) => (
                   <Input
                     label="Data de nascimento"
                     error={errors.birthdate?.message}
+                    disabled={isSubmitted}
                     {...inputProps}
                   />
                 )}
@@ -330,12 +330,16 @@ const Inscricoes: NextPage = () => {
             render={({ field }) => (
               <InputMask
                 mask="999.999.999-99"
-                value={field.value}
+                value={isSubmitted ? '' : field.value}
                 onChange={field.onChange}
-                disabled={isSubmitted}
               >
                 {(inputProps: any) => (
-                  <Input label="CPF" error={errors.cpf?.message} {...inputProps} {...inputProps} />
+                  <Input
+                    label="CPF"
+                    error={errors.cpf?.message}
+                    {...inputProps}
+                    disabled={isSubmitted}
+                  />
                 )}
               </InputMask>
             )}
@@ -360,9 +364,18 @@ const Inscricoes: NextPage = () => {
             control={control}
             // @ts-ignore
             render={({ field }) => (
-              <InputMask mask="(99) 99999-9999" value={field.value} onChange={field.onChange}>
+              <InputMask
+                mask="(99) 99999-9999"
+                value={isSubmitted ? '' : field.value}
+                onChange={field.onChange}
+              >
                 {(inputProps: any) => (
-                  <Input label="Telefone" error={errors.phone?.message} {...inputProps} />
+                  <Input
+                    label="Telefone"
+                    error={errors.phone?.message}
+                    {...inputProps}
+                    disabled={isSubmitted}
+                  />
                 )}
               </InputMask>
             )}
@@ -418,15 +431,15 @@ const Inscricoes: NextPage = () => {
                 render={({ field }) => (
                   <InputMask
                     mask="99/99/9999"
-                    value={field.value}
+                    value={isSubmitted ? '' : field.value}
                     onChange={field.onChange}
-                    disabled={isSubmitted}
                   >
                     {(inputProps: any) => (
                       <Input
                         label="Data de nascimento"
                         error={errors.students?.[index]?.birthdate?.message}
                         {...inputProps}
+                        disabled={isSubmitted}
                       />
                     )}
                   </InputMask>
