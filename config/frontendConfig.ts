@@ -10,7 +10,7 @@ export const frontendConfig = () => {
         pt: {
           EMAIL_PASSWORD_SIGN_IN_HEADER_TITLE: 'Entrar',
           EMAIL_PASSWORD_SIGN_IN_HEADER_SUBTITLE_START: '',
-          EMAIL_PASSWORD_SIGN_IN_HEADER_SUBTITLE_SIGN_UP_LINK: '',
+          EMAIL_PASSWORD_SIGN_IN_HEADER_SUBTITLE_SIGN_UP_LINK: 'Cadastre-se',
           EMAIL_PASSWORD_SIGN_IN_HEADER_SUBTITLE_END: '',
           EMAIL_PASSWORD_EMAIL_LABEL: 'Email',
           EMAIL_PASSWORD_EMAIL_PLACEHOLDER: 'Digite seu email',
@@ -36,9 +36,9 @@ export const frontendConfig = () => {
           superTokensBranding: {
             display: 'none'
           },
-          secondaryText: {
-            display: 'none'
-          },
+          // secondaryText: {
+          //   display: 'none'
+          // },
           button: {
             background: '#005e67',
             border: 'none'
