@@ -7,7 +7,7 @@
     "build": "next build",
     "prestart": "yarn prisma:db:push",
     "start": "next start -p 3000",
-    "prisma:db:push": "prisma db push --accept-data-loss --force-reset",
+    "prisma:db:push": "prisma db push",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "lint": "next lint --fix",
