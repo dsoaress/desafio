@@ -21,7 +21,8 @@ export const frontendConfig = () => {
           BRANDING_POWERED_BY_START: '',
           BRANDING_POWERED_BY_END: '',
           ERROR_NON_OPTIONAL: 'O campo é obrigatório',
-          ERROR_EMAIL_INVALID: 'Email inválido'
+          ERROR_EMAIL_INVALID: 'Email inválido',
+          EMAIL_PASSWORD_SIGN_IN_WRONG_CREDENTIALS_ERROR: 'Email ou senha incorretos'
         }
       },
       defaultLanguage: 'pt'
