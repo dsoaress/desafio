@@ -36,9 +36,9 @@ export const frontendConfig = () => {
           superTokensBranding: {
             display: 'none'
           },
-          // secondaryText: {
-          //   display: 'none'
-          // },
+          secondaryText: {
+            display: 'none'
+          },
           button: {
             background: '#005e67',
             border: 'none'
