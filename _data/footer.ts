@@ -34,8 +34,8 @@ export const footer = {
         isActive: true
       },
       {
-        title: 'Inscrições',
-        url: '/inscricoes',
+        title: 'Pré-inscrições',
+        url: '/pre-inscricoes',
         isActive: true
       },
       {

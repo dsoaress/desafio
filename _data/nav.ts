@@ -18,8 +18,8 @@ export const nav = [
     color: '#005e67'
   },
   {
-    title: 'Inscrições',
-    url: '/inscricoes',
+    title: 'Pré-inscrições',
+    url: '/pre-inscricoes',
     icon: 'BsPencilSquare',
     color: '#1ca0b1'
   }
