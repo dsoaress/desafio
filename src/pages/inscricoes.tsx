@@ -24,32 +24,32 @@ import { api } from '../services/api'
 type Inputs = {
   name: string
   email: string
-  phone: string
-  address: string
-  neighborhood: string
-  city: string
-  state: string
-  rg: string
-  cpf: string
-  birthdate: string
-  course: string
-  schoolGrade: string
-  schoolName: string
+  phone?: string
+  // address: string
+  // neighborhood: string
+  // city: string
+  state?: string
+  // rg: string
+  // cpf: string
+  // birthdate: string
+  course?: string
+  // schoolGrade: string
+  schoolName?: string
   students: {
     name: string
-    address: string
-    neighborhood: string
-    city: string
-    state: string
-    birthdate: string
-    schoolGrade: string
-    schoolName: string
+    // address: string
+    // neighborhood: string
+    // city: string
+    state?: string
+    // birthdate: string
+    schoolGrade?: string
+    schoolName?: string
   }[]
-  files: {
-    authorization: string
-    rg: string
-    cpf: string
-  }
+  // files: {
+  //   authorization: string
+  //   rg: string
+  //   cpf: string
+  // }
 }
 
 type GridProps = {
@@ -155,44 +155,44 @@ function FileInput({
 const schema = yup.object({
   name: yup.string().required('O nome é obrigatório'),
   email: yup.string().email('Insira um e-mail válido').required('O e-mail é obrigatório'),
-  phone: yup.string().required('O telefone é obrigatório'),
-  address: yup.string().required('O endereço é obrigatório'),
-  neighborhood: yup.string().required('O bairro é obrigatório'),
-  city: yup.string().required('A cidade é obrigatória'),
+  phone: yup.string().optional(),
+  // address: yup.string().required('O endereço é obrigatório'),
+  // neighborhood: yup.string().required('O bairro é obrigatório'),
+  // city: yup.string().required('A cidade é obrigatória'),
   state: yup.string().required('O estado é obrigatório'),
-  rg: yup.string().required('O RG é obrigatório'),
-  cpf: yup.string().required('O CPF é obrigatório'),
-  birthdate: yup.string().required('A data de nascimento é obrigatória'),
-  course: yup.string().required('O curso é obrigatório'),
-  schoolGrade: yup.string().required('A série escolar é obrigatória'),
-  schoolName: yup.string().required('O nome da escola é obrigatório'),
+  // rg: yup.string().required('O RG é obrigatório'),
+  // cpf: yup.string().required('O CPF é obrigatório'),
+  // birthdate: yup.string().required('A data de nascimento é obrigatória'),
+  course: yup.string().optional(),
+  // schoolGrade: yup.string().required('A série escolar é obrigatória'),
+  schoolName: yup.string().optional(),
   students: yup.array().of(
     yup.object({
       name: yup.string().required('O nome é obrigatório'),
-      address: yup.string().required('O endereço é obrigatório'),
-      neighborhood: yup.string().required('O bairro é obrigatório'),
-      city: yup.string().required('A cidade é obrigatória'),
-      state: yup.string().required('O estado é obrigatório'),
-      birthdate: yup.string().required('A data de nascimento é obrigatória'),
-      schoolGrade: yup.string().required('A série escolar é obrigatória'),
-      schoolName: yup.string().required('O nome da escola é obrigatório')
+      // address: yup.string().required('O endereço é obrigatório'),
+      // neighborhood: yup.string().required('O bairro é obrigatório'),
+      // city: yup.string().required('A cidade é obrigatória'),
+      state: yup.string().optional(),
+      // birthdate: yup.string().required('A data de nascimento é obrigatória'),
+      // schoolGrade: yup.string().required('A série escolar é obrigatória'),
+      schoolName: yup.string().optional()
     })
-  ),
-  files: yup.object({
-    authorization: yup.string().required('O upload dos arquivos são obrigatórios'),
-    rg: yup.string().required('O upload dos arquivos são obrigatórios'),
-    cpf: yup.string().required('O upload dos arquivos são obrigatórios')
-  })
+  )
+  // files: yup.object({
+  //   authorization: yup.string().required('O upload dos arquivos são obrigatórios'),
+  //   rg: yup.string().required('O upload dos arquivos são obrigatórios'),
+  //   cpf: yup.string().required('O upload dos arquivos são obrigatórios')
+  // })
 })
 
 const Inscricoes: NextPage = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [studentsCount, setStudentsCount] = useState(1)
-  const [files, setFiles] = useState<{
-    authorization?: string
-    rg?: string
-    cpf?: string
-  }>()
+  // const [files, setFiles] = useState<{
+  //   authorization?: string
+  //   rg?: string
+  //   cpf?: string
+  // }>()
 
   const {
     register,
@@ -220,33 +220,33 @@ const Inscricoes: NextPage = () => {
     }
   }, [clearErrors, email, setError])
 
-  useEffect(() => {
-    if (files?.authorization) setValue('files.authorization', files.authorization)
-    if (files?.rg) setValue('files.rg', files.rg)
-    if (files?.cpf) setValue('files.cpf', files.cpf)
-  }, [files, setValue])
+  // useEffect(() => {
+  //   if (files?.authorization) setValue('files.authorization', files.authorization)
+  //   if (files?.rg) setValue('files.rg', files.rg)
+  //   if (files?.cpf) setValue('files.cpf', files.cpf)
+  // }, [files, setValue])
 
-  const handleFileChange = async (event: FormEvent<HTMLInputElement>) => {
-    const field = event.currentTarget.name as 'authorization' | 'rg' | 'cpf'
-    const file = event.currentTarget.files?.[0]
+  // const handleFileChange = async (event: FormEvent<HTMLInputElement>) => {
+  //   const field = event.currentTarget.name as 'authorization' | 'rg' | 'cpf'
+  //   const file = event.currentTarget.files?.[0]
 
-    const loadingFile = toast.loading('Carregando arquivo...')
+  //   const loadingFile = toast.loading('Carregando arquivo...')
 
-    if (file) {
-      try {
-        const { url } = await uploadToS3(file)
-        setFiles({ ...files, [field]: url })
-        toast.success('Arquivo enviado com sucesso', {
-          id: loadingFile
-        })
-      } catch (error) {
-        toast.error('Erro ao enviar arquivo, por favor tente novamente')
-        console.error(error, {
-          id: loadingFile
-        })
-      }
-    }
-  }
+  //   if (file) {
+  //     try {
+  //       const { url } = await uploadToS3(file)
+  //       setFiles({ ...files, [field]: url })
+  //       toast.success('Arquivo enviado com sucesso', {
+  //         id: loadingFile
+  //       })
+  //     } catch (error) {
+  //       toast.error('Erro ao enviar arquivo, por favor tente novamente')
+  //       console.error(error, {
+  //         id: loadingFile
+  //       })
+  //     }
+  //   }
+  // }
 
   const onSubmit: SubmitHandler<Inputs> = async data => {
     try {
@@ -283,6 +283,7 @@ const Inscricoes: NextPage = () => {
             {...register('name')}
             error={errors.name?.message}
             disabled={isSubmitted}
+            required
           />
           <Input
             label="Matéria que leciona"
@@ -290,13 +291,13 @@ const Inscricoes: NextPage = () => {
             error={errors.course?.message}
             disabled={isSubmitted}
           />
-          <Input
+          {/* <Input
             label="Série escolar que leciona"
             {...register('schoolGrade')}
             error={errors.schoolGrade?.message}
             disabled={isSubmitted}
-          />
-          <Controller
+          /> */}
+          {/* <Controller
             name="birthdate"
             control={control}
             // @ts-ignore
@@ -315,8 +316,8 @@ const Inscricoes: NextPage = () => {
                 )}
               </InputMask>
             )}
-          />
-          <Input
+          /> */}
+          {/* <Input
             label="R.G."
             {...register('rg')}
             error={errors.rg?.message}
@@ -337,7 +338,7 @@ const Inscricoes: NextPage = () => {
                 )}
               </InputMask>
             )}
-          />
+          /> */}
           <Input
             label="Nome da escola"
             {...register('schoolName')}
@@ -352,6 +353,7 @@ const Inscricoes: NextPage = () => {
             {...register('email')}
             error={errors.email?.message}
             disabled={isSubmitted}
+            required
           />
           <Controller
             name="phone"
@@ -369,7 +371,7 @@ const Inscricoes: NextPage = () => {
               </InputMask>
             )}
           />
-          <Input
+          {/* <Input
             label="Endereço"
             {...register('address')}
             error={errors.address?.message}
@@ -386,12 +388,13 @@ const Inscricoes: NextPage = () => {
             {...register('city')}
             error={errors.city?.message}
             disabled={isSubmitted}
-          />
+          /> */}
           <Input
             label="Estado"
             {...register('state')}
             error={errors.state?.message}
             disabled={isSubmitted}
+            required
           />
         </div>
       </Grid>
@@ -412,8 +415,9 @@ const Inscricoes: NextPage = () => {
                 {...register(`students.${index}.name`)}
                 error={errors.students?.[index]?.name?.message}
                 disabled={isSubmitted}
+                required
               />
-              <Controller
+              {/* <Controller
                 name={`students.${index}.birthdate`}
                 control={control}
                 // @ts-ignore
@@ -432,13 +436,8 @@ const Inscricoes: NextPage = () => {
                     )}
                   </InputMask>
                 )}
-              />
-              <Input
-                label="Nome da escola"
-                {...register(`students.${index}.schoolName`)}
-                error={errors.students?.[index]?.schoolName?.message}
-                disabled={isSubmitted}
-              />
+              /> */}
+
               <Input
                 label="Série escolar"
                 {...register(`students.${index}.schoolGrade`)}
@@ -448,7 +447,7 @@ const Inscricoes: NextPage = () => {
             </div>
 
             <div>
-              <Input
+              {/* <Input
                 label="Endereço"
                 {...register(`students.${index}.address`)}
                 error={errors.students?.[index]?.address?.message}
@@ -464,6 +463,12 @@ const Inscricoes: NextPage = () => {
                 label="Cidade"
                 {...register(`students.${index}.city`)}
                 error={errors.students?.[index]?.city?.message}
+                disabled={isSubmitted}
+              />*/}
+              <Input
+                label="Nome da escola"
+                {...register(`students.${index}.schoolName`)}
+                error={errors.students?.[index]?.schoolName?.message}
                 disabled={isSubmitted}
               />
               <Input
@@ -530,13 +535,15 @@ const Inscricoes: NextPage = () => {
         </div>
 
         <div>
-          <Alert
+          {/* <Alert
             icon={CgSoftwareUpload}
             color={registerData.files.secondBlock.message.color}
             message={registerData.files.secondBlock.message.label}
-          />
+          /> */}
 
-          <div className="grid gap-2 grid-cols-3 my-8">
+          <p>A equipe do Desafio irá entrar em contato para finalizar a sua inscrição!</p>
+
+          {/* <div className="grid gap-2 grid-cols-3 my-8">
             <FileInput
               label={registerData.files.secondBlock.subButtons.first.label}
               name="authorization"
@@ -578,7 +585,7 @@ const Inscricoes: NextPage = () => {
             >
               {files?.cpf ? <strong>Arquivo carregado</strong> : 'Nenhum arquivo'}
             </span>
-          </div>
+          </div> */}
         </div>
       </Grid>
 

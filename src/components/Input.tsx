@@ -2,18 +2,19 @@ import cn from 'classnames'
 import { forwardRef, InputHTMLAttributes, Ref } from 'react'
 
 type InputProps = {
+  required?: boolean
   label: string
   error?: string
 } & InputHTMLAttributes<HTMLInputElement>
 
 function InputBase(
-  { label, error, id, className, disabled, ...props }: InputProps,
+  { label, required = false, error, id, className, disabled, ...props }: InputProps,
   ref: Ref<HTMLInputElement>
 ) {
   return (
     <div className="flex flex-col">
       <label className="text-neutral-600 mb-0.5" htmlFor={id}>
-        {label}
+        {label} {required && <span className="text-red-400">*</span>}
       </label>
 
       <input

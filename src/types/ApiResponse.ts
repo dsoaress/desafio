@@ -2,29 +2,29 @@ export type Teacher = {
   id: string
   name: string
   email: string
-  phone: string
-  address: string
-  neighborhood: string
-  city: string
+  phone?: string
+  // address: string
+  // neighborhood: string
+  // city: string
   state: string
-  rg: string
-  cpf: string
-  birthdate: string
+  // rg: string
+  // cpf: string
+  // birthdate: string
   course: string
-  schoolGrade: string
+  // schoolGrade: string
   schoolName: string
 }
 
 export type Student = {
   id: number
   name: string
-  address: string
-  neighborhood: string
-  city: string
-  state: string
-  birthdate: string
-  schoolGrade: string
-  schoolName: string
+  // address: string
+  // neighborhood: string
+  // city: string
+  state?: string
+  // birthdate: string
+  schoolGrade?: string
+  schoolName?: string
 }
 
 export type Register = {
@@ -32,8 +32,8 @@ export type Register = {
   validated: boolean
   teacher: Teacher
   students: Student[]
-  authorization: string
-  rg: string
-  cpf: string
+  // authorization: string
+  // rg: string
+  // cpf: string
   createdAt: string
 }

@@ -8,51 +8,51 @@ datasource db {
 }
 
 model Register {
-  id            Int       @id @default(autoincrement())
-  validated     Boolean   @default(false)
-  createdAt     DateTime  @default(now())
-  teacherId     Int       @unique
-  teacher       Teacher   @relation(fields: [teacherId], references: [id])
-  students      Student[]
-  authorization String
-  rg            String
-  cpf           String
+  id        Int       @id @default(autoincrement())
+  validated Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  teacherId Int       @unique
+  teacher   Teacher   @relation(fields: [teacherId], references: [id])
+  students  Student[]
+  // authorization String
+  // rg            String
+  // cpf           String
 
   @@map("registers")
 }
 
 model Teacher {
-  id           Int       @id @default(autoincrement())
-  name         String
-  email        String    @unique
-  phone        String
-  address      String
-  neighborhood String
-  city         String
-  state        String
-  rg           String
-  cpf          String
-  birthdate    String
-  course       String
-  schoolGrade  String
-  schoolName   String
-  register     Register?
+  id         Int       @id @default(autoincrement())
+  name       String
+  email      String    @unique
+  phone      String?
+  // address      String
+  // neighborhood String
+  // city         String
+  state      String
+  // rg           String
+  // cpf          String
+  // birthdate    String
+  course     String?
+  // schoolGrade  String
+  schoolName String?
+  register   Register?
 
   @@map("teachers")
 }
 
 model Student {
-  id           Int       @id @default(autoincrement())
-  name         String
-  address      String
-  neighborhood String
-  city         String
-  state        String
-  birthdate    String
-  schoolGrade  String
-  schoolName   String
-  registerId   Int
-  register     Register? @relation(fields: [registerId], references: [id])
+  id          Int       @id @default(autoincrement())
+  name        String
+  // address      String
+  // neighborhood String
+  // city         String
+  state       String?
+  // birthdate    String
+  schoolGrade String?
+  schoolName  String?
+  registerId  Int
+  register    Register? @relation(fields: [registerId], references: [id])
 
   @@map("students")
 }
