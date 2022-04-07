@@ -6,7 +6,7 @@ export const register = {
       color: '#1ca0b1'
     },
     success: {
-      message: 'Inscrição realizada com sucesso!',
+      message: 'Pré-inscrição realizada com sucesso!',
       color: '#009f36'
     }
   },

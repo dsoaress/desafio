@@ -15,23 +15,23 @@ export type Teacher = {
   schoolName: string
 }
 
-export type Student = {
-  id: number
-  name: string
-  // address: string
-  // neighborhood: string
-  // city: string
-  state?: string
-  // birthdate: string
-  schoolGrade?: string
-  schoolName?: string
-}
+// export type Student = {
+//   id: number
+//   name: string
+//   // address: string
+//   // neighborhood: string
+//   // city: string
+//   state?: string
+//   // birthdate: string
+//   schoolGrade?: string
+//   schoolName?: string
+// }
 
 export type Register = {
   id: number
   validated: boolean
   teacher: Teacher
-  students: Student[]
+  // students: Student[]
   // authorization: string
   // rg: string
   // cpf: string

@@ -77,7 +77,6 @@ export default Admin
 export const getServerSideProps: GetServerSideProps = async () => {
   const rawData = await prisma.register.findMany({
     include: {
-      students: true,
       teacher: true
     }
   })

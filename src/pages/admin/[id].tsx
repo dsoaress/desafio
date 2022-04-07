@@ -73,22 +73,6 @@ const RegisterId = ({ data }: RegisterIdProps) => {
           {/* <p>Série: {data.teacher.schoolGrade}</p> */}
           <p>Escola: {data.teacher.schoolName}</p>
         </div>
-
-        <div>
-          <h2 className="text-lg mb-2 font-bold">Dados do(s) aluno(s)</h2>
-          {data.students.map(student => (
-            <div key={student.id}>
-              <p>Nome: {student.name}</p>
-              {/* <p>Endereço: {student.address}</p>
-              <p>Bairro: {student.neighborhood}</p>
-              <p>Cidade: {student.city}</p> */}
-              <p>Estado: {student.state}</p>
-              {/* <p>Aniversário: {student.birthdate}</p> */}
-              <p>Série: {student.schoolGrade}</p>
-              <p>Escola: {student.schoolName}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </EmailPasswordAuthNoSSR>
   )
@@ -104,7 +88,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
       id: Number(id)
     },
     include: {
-      students: true,
+      // students: true,
       teacher: true
     }
   })

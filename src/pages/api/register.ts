@@ -18,16 +18,16 @@ type RegisterRequest = {
   course: string
   // schoolGrade: string
   schoolName: string
-  students: {
-    name: string
-    // address: string
-    // neighborhood: string
-    // city: string
-    state?: string
-    // birthdate: string
-    schoolGrade?: string
-    schoolName?: string
-  }[]
+  // students: {
+  //   name: string
+  //   // address: string
+  //   // neighborhood: string
+  //   // city: string
+  //   state?: string
+  //   // birthdate: string
+  //   schoolGrade?: string
+  //   schoolName?: string
+  // }[]
   // files: {
   //   authorization: string
   //   rg: string
@@ -72,22 +72,22 @@ const handler = nc<NextApiRequest, NextApiResponse>()
             course: data.course,
             schoolName: data.schoolName
           }
-        },
-        students: {
-          createMany: {
-            data: data.students.map(student => ({
-              name: student.name,
-              state: student.state,
-              schoolGrade: student.schoolGrade,
-              schoolName: student.schoolName
-            }))
-          }
         }
+        // students: {
+        //   createMany: {
+        //     data: data.students.map(student => ({
+        //       name: student.name,
+        //       state: student.state,
+        //       schoolGrade: student.schoolGrade,
+        //       schoolName: student.schoolName
+        //     }))
+        //   }
+        // }
       },
       select: {
         id: true,
         teacher: true,
-        students: true,
+        // students: true,
         createdAt: true
       }
     })
@@ -106,18 +106,7 @@ const handler = nc<NextApiRequest, NextApiResponse>()
         <p>Nome da escola: ${data.schoolName}</p>
         <br />
 
-        <h2>Dados dos(as) alunos(as)</h2>
-        ${data.students
-          .map(
-            (student, index) => `
-              <h3>Aluno(a) ${index + 1}</h3>
-              <p>Nome: ${student.name}</p>
-              <p>Estado: ${student.state}</p>
-              <p>Série escolar: ${student.schoolGrade}</p>
-              <p>Nome da escola: ${student.schoolName}</p>
-            `
-          )
-          .join('<br />')}
+
       `
     })
 

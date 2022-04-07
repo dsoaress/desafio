@@ -35,16 +35,16 @@ type Inputs = {
   course?: string
   // schoolGrade: string
   schoolName?: string
-  students: {
-    name: string
-    // address: string
-    // neighborhood: string
-    // city: string
-    state?: string
-    // birthdate: string
-    schoolGrade?: string
-    schoolName?: string
-  }[]
+  // students: {
+  //   name: string
+  //   // address: string
+  //   // neighborhood: string
+  //   // city: string
+  //   state?: string
+  //   // birthdate: string
+  //   schoolGrade?: string
+  //   schoolName?: string
+  // }[]
   // files: {
   //   authorization: string
   //   rg: string
@@ -165,19 +165,19 @@ const schema = yup.object({
   // birthdate: yup.string().required('A data de nascimento é obrigatória'),
   course: yup.string().optional(),
   // schoolGrade: yup.string().required('A série escolar é obrigatória'),
-  schoolName: yup.string().optional(),
-  students: yup.array().of(
-    yup.object({
-      name: yup.string().required('O nome é obrigatório'),
-      // address: yup.string().required('O endereço é obrigatório'),
-      // neighborhood: yup.string().required('O bairro é obrigatório'),
-      // city: yup.string().required('A cidade é obrigatória'),
-      state: yup.string().optional(),
-      // birthdate: yup.string().required('A data de nascimento é obrigatória'),
-      // schoolGrade: yup.string().required('A série escolar é obrigatória'),
-      schoolName: yup.string().optional()
-    })
-  )
+  schoolName: yup.string().optional()
+  // students: yup.array().of(
+  //   yup.object({
+  //     name: yup.string().required('O nome é obrigatório'),
+  //     // address: yup.string().required('O endereço é obrigatório'),
+  //     // neighborhood: yup.string().required('O bairro é obrigatório'),
+  //     // city: yup.string().required('A cidade é obrigatória'),
+  //     state: yup.string().optional(),
+  //     // birthdate: yup.string().required('A data de nascimento é obrigatória'),
+  //     // schoolGrade: yup.string().required('A série escolar é obrigatória'),
+  //     schoolName: yup.string().optional()
+  //   })
+  // )
   // files: yup.object({
   //   authorization: yup.string().required('O upload dos arquivos são obrigatórios'),
   //   rg: yup.string().required('O upload dos arquivos são obrigatórios'),
@@ -254,7 +254,7 @@ const Inscricoes: NextPage = () => {
       setIsSubmitted(true)
       toast.success(registerData.alertTop.success.message)
       reset()
-      push('/inscricoes#top')
+      push('/pre-inscricoes#top')
     } catch (error) {
       console.error(error)
     }
@@ -399,7 +399,7 @@ const Inscricoes: NextPage = () => {
         </div>
       </Grid>
 
-      {Array.from(Array(studentsCount))?.map((_, index) => (
+      {/* {Array.from(Array(studentsCount))?.map((_, index) => (
         <Fragment key={index}>
           <Alert
             icon={FaBookReader}
@@ -417,7 +417,7 @@ const Inscricoes: NextPage = () => {
                 disabled={isSubmitted}
                 required
               />
-              {/* <Controller
+              <Controller
                 name={`students.${index}.birthdate`}
                 control={control}
                 // @ts-ignore
@@ -436,7 +436,7 @@ const Inscricoes: NextPage = () => {
                     )}
                   </InputMask>
                 )}
-              /> */}
+              />
 
               <Input
                 label="Série escolar"
@@ -446,8 +446,8 @@ const Inscricoes: NextPage = () => {
               />
             </div>
 
-            <div>
-              {/* <Input
+             <div>
+              <Input
                 label="Endereço"
                 {...register(`students.${index}.address`)}
                 error={errors.students?.[index]?.address?.message}
@@ -464,7 +464,7 @@ const Inscricoes: NextPage = () => {
                 {...register(`students.${index}.city`)}
                 error={errors.students?.[index]?.city?.message}
                 disabled={isSubmitted}
-              />*/}
+              />
               <Input
                 label="Nome da escola"
                 {...register(`students.${index}.schoolName`)}
@@ -480,9 +480,9 @@ const Inscricoes: NextPage = () => {
             </div>
           </Grid>
         </Fragment>
-      ))}
+      ))}  */}
 
-      {studentsCount < 5 && (
+      {/* {studentsCount < 5 && (
         <Button
           onClick={() => setStudentsCount(studentsCount + 1)}
           color={registerData.alertStudent.color}
@@ -491,10 +491,10 @@ const Inscricoes: NextPage = () => {
         >
           {registerData.alertStudent.addMore}
         </Button>
-      )}
+      )} */}
 
       <Grid className="mt-12">
-        <div>
+        {/* <div>
           <Alert
             icon={CgSoftwareDownload}
             color={registerData.files.firstBlock.message.color}
@@ -532,18 +532,16 @@ const Inscricoes: NextPage = () => {
               {registerData.files.firstBlock.subButtons.third.label}
             </DownloadButton>
           </div>
-        </div>
+        </div> */}
 
-        <div>
-          {/* <Alert
+        {/* <div> */}
+        {/* <Alert
             icon={CgSoftwareUpload}
             color={registerData.files.secondBlock.message.color}
             message={registerData.files.secondBlock.message.label}
           /> */}
 
-          <p>A equipe do Desafio irá entrar em contato para finalizar a sua inscrição!</p>
-
-          {/* <div className="grid gap-2 grid-cols-3 my-8">
+        {/* <div className="grid gap-2 grid-cols-3 my-8">
             <FileInput
               label={registerData.files.secondBlock.subButtons.first.label}
               name="authorization"
@@ -586,12 +584,16 @@ const Inscricoes: NextPage = () => {
               {files?.cpf ? <strong>Arquivo carregado</strong> : 'Nenhum arquivo'}
             </span>
           </div> */}
-        </div>
+        {/* </div> */}
       </Grid>
 
       <Button type="submit" disabled={isSubmitted} color={registerData.alertTop.initial.color}>
         Finalizar formulário e enviar
       </Button>
+
+      <p className="text-center mt-8">
+        A equipe do Desafio irá entrar em contato para finalizar a sua inscrição!
+      </p>
     </form>
   )
 }
