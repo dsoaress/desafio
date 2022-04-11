@@ -1,9 +1,15 @@
 import { NextPage } from 'next'
 
+import { data } from '../../_data'
+import { Accordion } from '../components/Accordion'
+import { Title } from '../components/Title'
+
 const FAQ: NextPage = () => {
   return (
     <>
-      <h1>FAQ</h1>
+      <Title className="text-center">{data.faq.title}</Title>
+
+      <Accordion questions={data.faq.questions} />
     </>
   )
 }

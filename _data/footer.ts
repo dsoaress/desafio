@@ -42,12 +42,12 @@ export const footer = {
         title: 'Media kit',
         url: '/assets/files/media-kit.zip',
         isActive: true
+      },
+      {
+        title: 'FAQ',
+        url: '/faq',
+        isActive: true
       }
-      // {
-      //   title: 'FAQ',
-      //   url: '/faq',
-      //   isActive: false
-      // }
     ]
   },
   secondSection: {

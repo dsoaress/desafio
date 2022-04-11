@@ -254,7 +254,7 @@ const Inscricoes: NextPage = () => {
       setIsSubmitted(true)
       toast.success(registerData.alertTop.success.message)
       reset()
-      push('/pre-inscricoes#top')
+      push('/inscricoes#top')
     } catch (error) {
       console.error(error)
     }

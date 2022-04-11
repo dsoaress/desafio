@@ -6,16 +6,13 @@ import { ReactNode } from 'react'
 
 import { data } from '../../_data'
 import { Hr } from '../components/Hr'
+import { Title } from '../components/Title'
 import { VideoModal } from '../components/VideoModal'
 
 const Section = ({ children, className }: { children: ReactNode; className?: string }) => (
   <section className={cn('flex flex-col gap-4 my-12 lg:items-center lg:flex-row', className)}>
     {children}
   </section>
-)
-
-const Title = ({ children }: { children: ReactNode }) => (
-  <h2 className="text-2xl text-neutral-600 font-bold mb-4">{children}</h2>
 )
 
 const Home: NextPage = () => {
