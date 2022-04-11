@@ -1,4 +1,4 @@
-import { blackA, mauve, violet } from '@radix-ui/colors'
+import { blackA, mauve } from '@radix-ui/colors'
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
 import { keyframes, styled } from '@stitches/react'
@@ -87,7 +87,9 @@ const StyledContentText = styled('div', {
 })
 
 const StyledChevron = styled(ChevronDownIcon, {
-  color: violet.violet10,
+  flexShrink: 0,
+  marginLeft: 16,
+  color: '#006db6',
   transition: 'transform 300ms cubic-bezier(0.87, 0, 0.13, 1)',
   '[data-state=open] &': { transform: 'rotate(180deg)' }
 })
