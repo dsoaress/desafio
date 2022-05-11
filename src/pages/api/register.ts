@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import nc from 'next-connect'
 
 import { prisma } from '../../services/prisma'
-import { sendEmail } from '../../utils/sendMail'
+// import { sendEmail } from '../../utils/sendMail'
 
 type RegisterRequest = {
   name: string
@@ -92,23 +92,22 @@ const handler = nc<NextApiRequest, NextApiResponse>()
       }
     })
 
-    sendEmail({
-      subject: 'Novo registro',
-      html: `
-        <h1>Novo registro</h1>
+    // sendEmail({
+    //   subject: 'Novo registro',
+    //   html: `
+    //     <h1>Novo registro</h1>
 
-        <h2>Dados do(a) professor(a)</h2>
-        <p>Nome: ${data.name}</p>
-        <p>Email: ${data.email}</p>
-        <p>Telefone: ${data.phone}</p>
-        <p>Estado: ${data.state}</p>
-        <p>Matéria que leciona: ${data.course}</p>
-        <p>Nome da escola: ${data.schoolName}</p>
-        <br />
+    //     <h2>Dados do(a) professor(a)</h2>
+    //     <p>Nome: ${data.name}</p>
+    //     <p>Email: ${data.email}</p>
+    //     <p>Telefone: ${data.phone}</p>
+    //     <p>Estado: ${data.state}</p>
+    //     <p>Matéria que leciona: ${data.course}</p>
+    //     <p>Nome da escola: ${data.schoolName}</p>
+    //     <br />
 
-
-      `
-    })
+    //   `
+    // })
 
     res.status(201).json(newRegister)
   })
