@@ -16,11 +16,11 @@ export const nav = [
     url: '/regulamento',
     icon: 'HiOutlineClipboardList',
     color: '#005e67'
-  },
-  {
-    title: 'Inscrições',
-    url: '/inscricoes',
-    icon: 'BsPencilSquare',
-    color: '#1ca0b1'
   }
+  // {
+  //   title: 'Inscrições',
+  //   url: '/inscricoes',
+  //   icon: 'BsPencilSquare',
+  //   color: '#1ca0b1'
+  // }
 ]

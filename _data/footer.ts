@@ -33,11 +33,11 @@ export const footer = {
         url: '/regulamento',
         isActive: true
       },
-      {
-        title: 'Inscrições',
-        url: '/inscricoes',
-        isActive: true
-      },
+      // {
+      //   title: 'Inscrições',
+      //   url: '/inscricoes',
+      //   isActive: true
+      // },
       {
         title: 'Media kit',
         url: '/assets/files/media-kit.zip',

@@ -260,342 +260,348 @@ const Inscricoes: NextPage = () => {
     }
   }
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit)} id="form">
-      <Alert
-        icon={isSubmitted ? AiOutlineCheckCircle : BsExclamationTriangle}
-        message={registerData.alertTop[isSubmitted ? 'success' : 'initial'].message}
-        color={registerData.alertTop[isSubmitted ? 'success' : 'initial'].color}
-        className="mb-4"
-      />
+  useEffect(() => {
+    push('/')
+  }, [push])
 
-      <Alert
-        icon={FaUserTie}
-        message={registerData.alertTeacher.message}
-        color={registerData.alertTeacher.color}
-        className="mb-4"
-      />
+  return null
 
-      <Grid>
-        <div>
-          <Input
-            label="Nome"
-            {...register('name')}
-            error={errors.name?.message}
-            disabled={isSubmitted}
-            required
-          />
-          <Input
-            label="Matéria que leciona"
-            {...register('course')}
-            error={errors.course?.message}
-            disabled={isSubmitted}
-          />
-          {/* <Input
-            label="Série escolar que leciona"
-            {...register('schoolGrade')}
-            error={errors.schoolGrade?.message}
-            disabled={isSubmitted}
-          /> */}
-          {/* <Controller
-            name="birthdate"
-            control={control}
-            // @ts-ignore
-            render={({ field }) => (
-              <InputMask
-                mask="99/99/9999"
-                value={isSubmitted ? '' : field.value}
-                onChange={field.onChange}
-              >
-                {(inputProps: any) => (
-                  <Input
-                    label="Data de nascimento"
-                    error={errors.birthdate?.message}
-                    {...inputProps}
-                  />
-                )}
-              </InputMask>
-            )}
-          /> */}
-          {/* <Input
-            label="R.G."
-            {...register('rg')}
-            error={errors.rg?.message}
-            disabled={isSubmitted}
-          />
-          <Controller
-            name="cpf"
-            control={control}
-            // @ts-ignore
-            render={({ field }) => (
-              <InputMask
-                mask="999.999.999-99"
-                value={isSubmitted ? '' : field.value}
-                onChange={field.onChange}
-              >
-                {(inputProps: any) => (
-                  <Input label="CPF" error={errors.cpf?.message} {...inputProps} />
-                )}
-              </InputMask>
-            )}
-          /> */}
-          <Input
-            label="Nome da escola"
-            {...register('schoolName')}
-            error={errors.schoolName?.message}
-          />
-        </div>
+  // return (
+  //   <form onSubmit={handleSubmit(onSubmit)} id="form">
+  //     <Alert
+  //       icon={isSubmitted ? AiOutlineCheckCircle : BsExclamationTriangle}
+  //       message={registerData.alertTop[isSubmitted ? 'success' : 'initial'].message}
+  //       color={registerData.alertTop[isSubmitted ? 'success' : 'initial'].color}
+  //       className="mb-4"
+  //     />
 
-        <div>
-          <Input
-            label="Email"
-            type="email"
-            {...register('email')}
-            error={errors.email?.message}
-            disabled={isSubmitted}
-            required
-          />
-          <Controller
-            name="phone"
-            control={control}
-            // @ts-ignore
-            render={({ field }) => (
-              <InputMask
-                mask="(99) 99999-9999"
-                value={isSubmitted ? '' : field.value}
-                onChange={field.onChange}
-              >
-                {(inputProps: any) => (
-                  <Input label="Telefone" error={errors.phone?.message} {...inputProps} />
-                )}
-              </InputMask>
-            )}
-          />
-          {/* <Input
-            label="Endereço"
-            {...register('address')}
-            error={errors.address?.message}
-            disabled={isSubmitted}
-          />
-          <Input
-            label="Bairro"
-            {...register('neighborhood')}
-            error={errors.neighborhood?.message}
-            disabled={isSubmitted}
-          />
-          <Input
-            label="Cidade"
-            {...register('city')}
-            error={errors.city?.message}
-            disabled={isSubmitted}
-          /> */}
-          <Input
-            label="Estado"
-            {...register('state')}
-            error={errors.state?.message}
-            disabled={isSubmitted}
-            required
-          />
-        </div>
-      </Grid>
+  //     <Alert
+  //       icon={FaUserTie}
+  //       message={registerData.alertTeacher.message}
+  //       color={registerData.alertTeacher.color}
+  //       className="mb-4"
+  //     />
 
-      {/* {Array.from(Array(studentsCount))?.map((_, index) => (
-        <Fragment key={index}>
-          <Alert
-            icon={FaBookReader}
-            message={registerData.alertStudent.message}
-            color={registerData.alertStudent.color}
-            className="mt-8 mb-4"
-          />
+  //     <Grid>
+  //       <div>
+  //         <Input
+  //           label="Nome"
+  //           {...register('name')}
+  //           error={errors.name?.message}
+  //           disabled={isSubmitted}
+  //           required
+  //         />
+  //         <Input
+  //           label="Matéria que leciona"
+  //           {...register('course')}
+  //           error={errors.course?.message}
+  //           disabled={isSubmitted}
+  //         />
+  //         {/* <Input
+  //           label="Série escolar que leciona"
+  //           {...register('schoolGrade')}
+  //           error={errors.schoolGrade?.message}
+  //           disabled={isSubmitted}
+  //         /> */}
+  //         {/* <Controller
+  //           name="birthdate"
+  //           control={control}
+  //           // @ts-ignore
+  //           render={({ field }) => (
+  //             <InputMask
+  //               mask="99/99/9999"
+  //               value={isSubmitted ? '' : field.value}
+  //               onChange={field.onChange}
+  //             >
+  //               {(inputProps: any) => (
+  //                 <Input
+  //                   label="Data de nascimento"
+  //                   error={errors.birthdate?.message}
+  //                   {...inputProps}
+  //                 />
+  //               )}
+  //             </InputMask>
+  //           )}
+  //         /> */}
+  //         {/* <Input
+  //           label="R.G."
+  //           {...register('rg')}
+  //           error={errors.rg?.message}
+  //           disabled={isSubmitted}
+  //         />
+  //         <Controller
+  //           name="cpf"
+  //           control={control}
+  //           // @ts-ignore
+  //           render={({ field }) => (
+  //             <InputMask
+  //               mask="999.999.999-99"
+  //               value={isSubmitted ? '' : field.value}
+  //               onChange={field.onChange}
+  //             >
+  //               {(inputProps: any) => (
+  //                 <Input label="CPF" error={errors.cpf?.message} {...inputProps} />
+  //               )}
+  //             </InputMask>
+  //           )}
+  //         /> */}
+  //         <Input
+  //           label="Nome da escola"
+  //           {...register('schoolName')}
+  //           error={errors.schoolName?.message}
+  //         />
+  //       </div>
 
-          <Grid>
-            <div>
-              <Input
-                label="Nome"
-                {...register(`students.${index}.name`)}
-                error={errors.students?.[index]?.name?.message}
-                disabled={isSubmitted}
-                required
-              />
-              <Controller
-                name={`students.${index}.birthdate`}
-                control={control}
-                // @ts-ignore
-                render={({ field }) => (
-                  <InputMask
-                    mask="99/99/9999"
-                    value={isSubmitted ? '' : field.value}
-                    onChange={field.onChange}
-                  >
-                    {(inputProps: any) => (
-                      <Input
-                        label="Data de nascimento"
-                        error={errors.students?.[index]?.birthdate?.message}
-                        {...inputProps}
-                      />
-                    )}
-                  </InputMask>
-                )}
-              />
+  //       <div>
+  //         <Input
+  //           label="Email"
+  //           type="email"
+  //           {...register('email')}
+  //           error={errors.email?.message}
+  //           disabled={isSubmitted}
+  //           required
+  //         />
+  //         <Controller
+  //           name="phone"
+  //           control={control}
+  //           // @ts-ignore
+  //           render={({ field }) => (
+  //             <InputMask
+  //               mask="(99) 99999-9999"
+  //               value={isSubmitted ? '' : field.value}
+  //               onChange={field.onChange}
+  //             >
+  //               {(inputProps: any) => (
+  //                 <Input label="Telefone" error={errors.phone?.message} {...inputProps} />
+  //               )}
+  //             </InputMask>
+  //           )}
+  //         />
+  //         {/* <Input
+  //           label="Endereço"
+  //           {...register('address')}
+  //           error={errors.address?.message}
+  //           disabled={isSubmitted}
+  //         />
+  //         <Input
+  //           label="Bairro"
+  //           {...register('neighborhood')}
+  //           error={errors.neighborhood?.message}
+  //           disabled={isSubmitted}
+  //         />
+  //         <Input
+  //           label="Cidade"
+  //           {...register('city')}
+  //           error={errors.city?.message}
+  //           disabled={isSubmitted}
+  //         /> */}
+  //         <Input
+  //           label="Estado"
+  //           {...register('state')}
+  //           error={errors.state?.message}
+  //           disabled={isSubmitted}
+  //           required
+  //         />
+  //       </div>
+  //     </Grid>
 
-              <Input
-                label="Série escolar"
-                {...register(`students.${index}.schoolGrade`)}
-                error={errors.students?.[index]?.schoolGrade?.message}
-                disabled={isSubmitted}
-              />
-            </div>
+  //     {/* {Array.from(Array(studentsCount))?.map((_, index) => (
+  //       <Fragment key={index}>
+  //         <Alert
+  //           icon={FaBookReader}
+  //           message={registerData.alertStudent.message}
+  //           color={registerData.alertStudent.color}
+  //           className="mt-8 mb-4"
+  //         />
 
-             <div>
-              <Input
-                label="Endereço"
-                {...register(`students.${index}.address`)}
-                error={errors.students?.[index]?.address?.message}
-                disabled={isSubmitted}
-              />
-              <Input
-                label="Bairro"
-                {...register(`students.${index}.neighborhood`)}
-                error={errors.students?.[index]?.neighborhood?.message}
-                disabled={isSubmitted}
-              />
-              <Input
-                label="Cidade"
-                {...register(`students.${index}.city`)}
-                error={errors.students?.[index]?.city?.message}
-                disabled={isSubmitted}
-              />
-              <Input
-                label="Nome da escola"
-                {...register(`students.${index}.schoolName`)}
-                error={errors.students?.[index]?.schoolName?.message}
-                disabled={isSubmitted}
-              />
-              <Input
-                label="Estado"
-                {...register(`students.${index}.state`)}
-                error={errors.students?.[index]?.state?.message}
-                disabled={isSubmitted}
-              />
-            </div>
-          </Grid>
-        </Fragment>
-      ))}  */}
+  //         <Grid>
+  //           <div>
+  //             <Input
+  //               label="Nome"
+  //               {...register(`students.${index}.name`)}
+  //               error={errors.students?.[index]?.name?.message}
+  //               disabled={isSubmitted}
+  //               required
+  //             />
+  //             <Controller
+  //               name={`students.${index}.birthdate`}
+  //               control={control}
+  //               // @ts-ignore
+  //               render={({ field }) => (
+  //                 <InputMask
+  //                   mask="99/99/9999"
+  //                   value={isSubmitted ? '' : field.value}
+  //                   onChange={field.onChange}
+  //                 >
+  //                   {(inputProps: any) => (
+  //                     <Input
+  //                       label="Data de nascimento"
+  //                       error={errors.students?.[index]?.birthdate?.message}
+  //                       {...inputProps}
+  //                     />
+  //                   )}
+  //                 </InputMask>
+  //               )}
+  //             />
 
-      {/* {studentsCount < 5 && (
-        <Button
-          onClick={() => setStudentsCount(studentsCount + 1)}
-          color={registerData.alertStudent.color}
-          icon={HiOutlinePlusCircle}
-          type="button"
-        >
-          {registerData.alertStudent.addMore}
-        </Button>
-      )} */}
+  //             <Input
+  //               label="Série escolar"
+  //               {...register(`students.${index}.schoolGrade`)}
+  //               error={errors.students?.[index]?.schoolGrade?.message}
+  //               disabled={isSubmitted}
+  //             />
+  //           </div>
 
-      <Grid className="mt-12">
-        {/* <div>
-          <Alert
-            icon={CgSoftwareDownload}
-            color={registerData.files.firstBlock.message.color}
-            message={registerData.files.firstBlock.message.label}
-          />
-          <div className="grid gap-2 grid-cols-3 my-8">
-            <DownloadButton
-              onClick={() =>
-                saveAs(
-                  registerData.files.firstBlock.subButtons.first.file,
-                  `${registerData.files.firstBlock.subButtons.first.label}.pdf`
-                )
-              }
-            >
-              {registerData.files.firstBlock.subButtons.first.label}
-            </DownloadButton>
-            <DownloadButton
-              onClick={() =>
-                saveAs(
-                  registerData.files.firstBlock.subButtons.second.file,
-                  `${registerData.files.firstBlock.subButtons.second.label}.pdf`
-                )
-              }
-            >
-              {registerData.files.firstBlock.subButtons.second.label}
-            </DownloadButton>
-            <DownloadButton
-              onClick={() =>
-                saveAs(
-                  registerData.files.firstBlock.subButtons.third.file,
-                  `${registerData.files.firstBlock.subButtons.third.label}.pdf`
-                )
-              }
-            >
-              {registerData.files.firstBlock.subButtons.third.label}
-            </DownloadButton>
-          </div>
-        </div> */}
+  //            <div>
+  //             <Input
+  //               label="Endereço"
+  //               {...register(`students.${index}.address`)}
+  //               error={errors.students?.[index]?.address?.message}
+  //               disabled={isSubmitted}
+  //             />
+  //             <Input
+  //               label="Bairro"
+  //               {...register(`students.${index}.neighborhood`)}
+  //               error={errors.students?.[index]?.neighborhood?.message}
+  //               disabled={isSubmitted}
+  //             />
+  //             <Input
+  //               label="Cidade"
+  //               {...register(`students.${index}.city`)}
+  //               error={errors.students?.[index]?.city?.message}
+  //               disabled={isSubmitted}
+  //             />
+  //             <Input
+  //               label="Nome da escola"
+  //               {...register(`students.${index}.schoolName`)}
+  //               error={errors.students?.[index]?.schoolName?.message}
+  //               disabled={isSubmitted}
+  //             />
+  //             <Input
+  //               label="Estado"
+  //               {...register(`students.${index}.state`)}
+  //               error={errors.students?.[index]?.state?.message}
+  //               disabled={isSubmitted}
+  //             />
+  //           </div>
+  //         </Grid>
+  //       </Fragment>
+  //     ))}  */}
 
-        {/* <div> */}
-        {/* <Alert
-            icon={CgSoftwareUpload}
-            color={registerData.files.secondBlock.message.color}
-            message={registerData.files.secondBlock.message.label}
-          /> */}
+  //     {/* {studentsCount < 5 && (
+  //       <Button
+  //         onClick={() => setStudentsCount(studentsCount + 1)}
+  //         color={registerData.alertStudent.color}
+  //         icon={HiOutlinePlusCircle}
+  //         type="button"
+  //       >
+  //         {registerData.alertStudent.addMore}
+  //       </Button>
+  //     )} */}
 
-        {/* <div className="grid gap-2 grid-cols-3 my-8">
-            <FileInput
-              label={registerData.files.secondBlock.subButtons.first.label}
-              name="authorization"
-              onChange={handleFileChange}
-            />
+  //     <Grid className="mt-12">
+  //       {/* <div>
+  //         <Alert
+  //           icon={CgSoftwareDownload}
+  //           color={registerData.files.firstBlock.message.color}
+  //           message={registerData.files.firstBlock.message.label}
+  //         />
+  //         <div className="grid gap-2 grid-cols-3 my-8">
+  //           <DownloadButton
+  //             onClick={() =>
+  //               saveAs(
+  //                 registerData.files.firstBlock.subButtons.first.file,
+  //                 `${registerData.files.firstBlock.subButtons.first.label}.pdf`
+  //               )
+  //             }
+  //           >
+  //             {registerData.files.firstBlock.subButtons.first.label}
+  //           </DownloadButton>
+  //           <DownloadButton
+  //             onClick={() =>
+  //               saveAs(
+  //                 registerData.files.firstBlock.subButtons.second.file,
+  //                 `${registerData.files.firstBlock.subButtons.second.label}.pdf`
+  //               )
+  //             }
+  //           >
+  //             {registerData.files.firstBlock.subButtons.second.label}
+  //           </DownloadButton>
+  //           <DownloadButton
+  //             onClick={() =>
+  //               saveAs(
+  //                 registerData.files.firstBlock.subButtons.third.file,
+  //                 `${registerData.files.firstBlock.subButtons.third.label}.pdf`
+  //               )
+  //             }
+  //           >
+  //             {registerData.files.firstBlock.subButtons.third.label}
+  //           </DownloadButton>
+  //         </div>
+  //       </div> */}
 
-            <FileInput
-              label={registerData.files.secondBlock.subButtons.second.label}
-              name="rg"
-              onChange={handleFileChange}
-            />
+  //       {/* <div> */}
+  //       {/* <Alert
+  //           icon={CgSoftwareUpload}
+  //           color={registerData.files.secondBlock.message.color}
+  //           message={registerData.files.secondBlock.message.label}
+  //         /> */}
 
-            <FileInput
-              label={registerData.files.secondBlock.subButtons.third.label}
-              name="cpf"
-              onChange={handleFileChange}
-            />
+  //       {/* <div className="grid gap-2 grid-cols-3 my-8">
+  //           <FileInput
+  //             label={registerData.files.secondBlock.subButtons.first.label}
+  //             name="authorization"
+  //             onChange={handleFileChange}
+  //           />
 
-            <span
-              className={cn('text-center text-xs mt-1 block', {
-                'text-red-500': errors.files?.authorization?.message
-              })}
-            >
-              {files?.authorization ? <strong>Arquivo carregado</strong> : 'Nenhum arquivo'}
-            </span>
+  //           <FileInput
+  //             label={registerData.files.secondBlock.subButtons.second.label}
+  //             name="rg"
+  //             onChange={handleFileChange}
+  //           />
 
-            <span
-              className={cn('text-center text-xs mt-1 block', {
-                'text-red-500': errors.files?.rg?.message
-              })}
-            >
-              {files?.rg ? <strong>Arquivo carregado</strong> : 'Nenhum arquivo'}
-            </span>
+  //           <FileInput
+  //             label={registerData.files.secondBlock.subButtons.third.label}
+  //             name="cpf"
+  //             onChange={handleFileChange}
+  //           />
 
-            <span
-              className={cn('text-center text-xs mt-1 block', {
-                'text-red-500': errors.files?.cpf?.message
-              })}
-            >
-              {files?.cpf ? <strong>Arquivo carregado</strong> : 'Nenhum arquivo'}
-            </span>
-          </div> */}
-        {/* </div> */}
-      </Grid>
+  //           <span
+  //             className={cn('text-center text-xs mt-1 block', {
+  //               'text-red-500': errors.files?.authorization?.message
+  //             })}
+  //           >
+  //             {files?.authorization ? <strong>Arquivo carregado</strong> : 'Nenhum arquivo'}
+  //           </span>
 
-      <Button type="submit" disabled={isSubmitted} color={registerData.alertTop.initial.color}>
-        Finalizar formulário e enviar
-      </Button>
+  //           <span
+  //             className={cn('text-center text-xs mt-1 block', {
+  //               'text-red-500': errors.files?.rg?.message
+  //             })}
+  //           >
+  //             {files?.rg ? <strong>Arquivo carregado</strong> : 'Nenhum arquivo'}
+  //           </span>
 
-      <p className="text-center mt-8">
-        A equipe do Desafio irá entrar em contato para finalizar a sua inscrição!
-      </p>
-    </form>
-  )
+  //           <span
+  //             className={cn('text-center text-xs mt-1 block', {
+  //               'text-red-500': errors.files?.cpf?.message
+  //             })}
+  //           >
+  //             {files?.cpf ? <strong>Arquivo carregado</strong> : 'Nenhum arquivo'}
+  //           </span>
+  //         </div> */}
+  //       {/* </div> */}
+  //     </Grid>
+
+  //     <Button type="submit" disabled={isSubmitted} color={registerData.alertTop.initial.color}>
+  //       Finalizar formulário e enviar
+  //     </Button>
+
+  //     <p className="text-center mt-8">
+  //       A equipe do Desafio irá entrar em contato para finalizar a sua inscrição!
+  //     </p>
+  //   </form>
+  // )
 }
 
 export default Inscricoes
