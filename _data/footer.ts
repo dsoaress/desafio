@@ -23,11 +23,11 @@ export const footer = {
         url: '/',
         isActive: true
       },
-      // {
-      //   title: 'Trilhas',
-      //   url: '/trilhas',
-      //   isActive: false
-      // },
+      {
+        title: 'Trilhas',
+        url: '/trilhas',
+        isActive: false
+      },
       {
         title: 'Regulamento',
         url: '/regulamento',

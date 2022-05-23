@@ -1,11 +1,9 @@
 import { NextPage } from 'next'
 
+import { Tabs } from '../components/Tabs'
+
 const Trilhas: NextPage = () => {
-  return (
-    <>
-      <h1>Trilhas</h1>
-    </>
-  )
+  return <Tabs />
 }
 
 export default Trilhas

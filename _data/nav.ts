@@ -5,12 +5,12 @@ export const nav = [
     icon: 'BsInfoLg',
     color: '#006db6'
   },
-  // {
-  //   title: 'Trilhas',
-  //   url: '/trilhas',
-  //   icon: 'BiDirections',
-  //   color: '#009f36'
-  // },
+  {
+    title: 'Trilhas',
+    url: '/trilhas',
+    icon: 'BiDirections',
+    color: '#009f36'
+  },
   {
     title: 'Regulamento',
     url: '/regulamento',

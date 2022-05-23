@@ -23,6 +23,7 @@
     "@radix-ui/react-aspect-ratio": "0.1.4",
     "@radix-ui/react-dialog": "0.1.7",
     "@radix-ui/react-icons": "^1.1.0",
+    "@radix-ui/react-tabs": "^0.1.5",
     "@stitches/react": "^1.2.7",
     "axios": "0.26.1",
     "classnames": "2.3.1",
@@ -44,6 +45,7 @@
     "sharp": "^0.30.3",
     "supertokens-auth-react": "^0.19.0",
     "supertokens-node": "^9.1.1",
+    "tailwindcss-radix": "^2.2.0",
     "yup": "0.32.11"
   },
   "devDependencies": {
