@@ -1,8 +1,10 @@
 import { AspectRatio } from '@radix-ui/react-aspect-ratio'
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import cx from 'classnames'
+import { saveAs } from 'file-saver'
 import React from 'react'
 
+import { DownloadButton } from './DownloadButton'
 import PDFViewer from './PDFViewer'
 
 interface Tab {
@@ -58,43 +60,50 @@ const ContentFirstYear = () => {
   ]
 
   return (
-    <TabsPrimitive.Root defaultValue="tab1" className="flex">
-      <TabsPrimitive.List className={cx('flex flex-col rounded-t-lg ')}>
-        {tabs.map(({ title, value }) => (
-          <TabsPrimitive.Trigger
-            key={`tab-trigger-${value}`}
+    <>
+      <TabsPrimitive.Root defaultValue="tab1" className="flex">
+        <TabsPrimitive.List className={cx('flex flex-col rounded-t-lg ')}>
+          {tabs.map(({ title, value }) => (
+            <TabsPrimitive.Trigger
+              key={`tab-trigger-${value}`}
+              value={value}
+              className={cx(
+                'group bg-white rounded-tl-xl rounded-bl-xl',
+                'radix-state-inactive:bg-gray-700 text-gray-700 radix-state-inactive:text-white',
+                'flex-1 px-3 py-2.5',
+                'focus:z-10 max-h-16 w-32 shrink-0'
+              )}
+            >
+              <span className={cx('text-sm font-medium ', '')}>{title}</span>
+            </TabsPrimitive.Trigger>
+          ))}
+        </TabsPrimitive.List>
+        {tabs.map(({ value }) => (
+          <TabsPrimitive.Content
+            key={`tab-content-${value}`}
             value={value}
-            className={cx(
-              'group bg-white rounded-tl-xl rounded-bl-xl',
-              'radix-state-inactive:bg-gray-700 text-gray-700 radix-state-inactive:text-white',
-              'flex-1 px-3 py-2.5',
-              'focus:z-10 max-h-16 w-32 shrink-0'
-            )}
+            className={cx('rounded-tr-lg rounded-br-lg bg-white px-6 py-4 w-full')}
           >
-            <span className={cx('text-sm font-medium ', '')}>{title}</span>
-          </TabsPrimitive.Trigger>
-        ))}
-      </TabsPrimitive.List>
-      {tabs.map(({ value }) => (
-        <TabsPrimitive.Content
-          key={`tab-content-${value}`}
-          value={value}
-          className={cx('rounded-tr-lg rounded-br-lg bg-white px-6 py-4 w-full')}
-        >
-          <span className="text-sm text-gray-700">
-            {
+            <span className="text-sm text-gray-700">
               {
-                tab1: <PDF file="/assets/pdfs/1_1a-etapa.pdf" />,
-                tab2: <PDF file="/assets/pdfs/1_2a-etapa.pdf" />,
-                tab3: <PDF file="/assets/pdfs/1_3a-etapa.pdf" />,
-                tab4: <PDF file="/assets/pdfs/1_4a-etapa.pdf" />,
-                tab5: <PDF file="/assets/pdfs/1_ped.pdf" />
-              }[value]
-            }
-          </span>
-        </TabsPrimitive.Content>
-      ))}
-    </TabsPrimitive.Root>
+                {
+                  tab1: <PDF file="/assets/pdfs/1_1a-etapa.pdf" />,
+                  tab2: <PDF file="/assets/pdfs/1_2a-etapa.pdf" />,
+                  tab3: <PDF file="/assets/pdfs/1_3a-etapa.pdf" />,
+                  tab4: <PDF file="/assets/pdfs/1_4a-etapa.pdf" />,
+                  tab5: <PDF file="/assets/pdfs/1_ped.pdf" />
+                }[value]
+              }
+            </span>
+          </TabsPrimitive.Content>
+        ))}
+      </TabsPrimitive.Root>
+      <DownloadButton
+        onClick={() => saveAs('/assets/pdfs/trilha_1.pdf', `De vento em vento faz-se a luz.pdf`)}
+      >
+        Baixar PDF
+      </DownloadButton>
+    </>
   )
 }
 
@@ -123,43 +132,48 @@ const ContentSecondYear = () => {
   ]
 
   return (
-    <TabsPrimitive.Root defaultValue="tab1" className="flex">
-      <TabsPrimitive.List className={cx('flex flex-col rounded-t-lg ')}>
-        {tabs.map(({ title, value }) => (
-          <TabsPrimitive.Trigger
-            key={`tab-trigger-${value}`}
+    <>
+      <TabsPrimitive.Root defaultValue="tab1" className="flex">
+        <TabsPrimitive.List className={cx('flex flex-col rounded-t-lg ')}>
+          {tabs.map(({ title, value }) => (
+            <TabsPrimitive.Trigger
+              key={`tab-trigger-${value}`}
+              value={value}
+              className={cx(
+                'group bg-white rounded-tl-xl rounded-bl-xl',
+                'radix-state-inactive:bg-gray-700 text-gray-700 radix-state-inactive:text-white',
+                'flex-1 px-3 py-2.5',
+                'focus:z-10 max-h-16 w-32 shrink-0'
+              )}
+            >
+              <span className={cx('text-sm font-medium ', '')}>{title}</span>
+            </TabsPrimitive.Trigger>
+          ))}
+        </TabsPrimitive.List>
+        {tabs.map(({ value }) => (
+          <TabsPrimitive.Content
+            key={`tab-content-${value}`}
             value={value}
-            className={cx(
-              'group bg-white rounded-tl-xl rounded-bl-xl',
-              'radix-state-inactive:bg-gray-700 text-gray-700 radix-state-inactive:text-white',
-              'flex-1 px-3 py-2.5',
-              'focus:z-10 max-h-16 w-32 shrink-0'
-            )}
+            className={cx('rounded-tr-lg rounded-br-lg bg-white px-6 py-4 w-full')}
           >
-            <span className={cx('text-sm font-medium ', '')}>{title}</span>
-          </TabsPrimitive.Trigger>
-        ))}
-      </TabsPrimitive.List>
-      {tabs.map(({ value }) => (
-        <TabsPrimitive.Content
-          key={`tab-content-${value}`}
-          value={value}
-          className={cx('rounded-tr-lg rounded-br-lg bg-white px-6 py-4 w-full')}
-        >
-          <span className="text-sm text-gray-700">
-            {
+            <span className="text-sm text-gray-700">
               {
-                tab1: <PDF file="/assets/pdfs/2_1a-etapa.pdf" />,
-                tab2: <PDF file="/assets/pdfs/2_2a-etapa.pdf" />,
-                tab3: <PDF file="/assets/pdfs/2_3a-etapa.pdf" />,
-                tab4: <PDF file="/assets/pdfs/2_4a-etapa.pdf" />,
-                tab5: <PDF file="/assets/pdfs/2_ped.pdf" />
-              }[value]
-            }
-          </span>
-        </TabsPrimitive.Content>
-      ))}
-    </TabsPrimitive.Root>
+                {
+                  tab1: <PDF file="/assets/pdfs/2_1a-etapa.pdf" />,
+                  tab2: <PDF file="/assets/pdfs/2_2a-etapa.pdf" />,
+                  tab3: <PDF file="/assets/pdfs/2_3a-etapa.pdf" />,
+                  tab4: <PDF file="/assets/pdfs/2_4a-etapa.pdf" />,
+                  tab5: <PDF file="/assets/pdfs/2_ped.pdf" />
+                }[value]
+              }
+            </span>
+          </TabsPrimitive.Content>
+        ))}
+      </TabsPrimitive.Root>
+      <DownloadButton onClick={() => saveAs('/assets/pdfs/trilha_2.pdf', `O sol é para todos.pdf`)}>
+        Baixar PDF
+      </DownloadButton>
+    </>
   )
 }
 
