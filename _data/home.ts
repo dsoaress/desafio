@@ -3,7 +3,7 @@ export const home = {
     title: 'Desafio FazGame Eletrobras60',
     text: 'O Desafio FazGame Eletrobras60 é uma iniciativa promovida pela FazGame, em parceria com a Eletrobras. O objetivo do Desafio é oferecer uma competição on-line e gratuita para que estudantes do 1° e 2° anos do Ensino Médio criem games narrativos sobre temas ligados à energia limpa e renovável, crucial para a sobrevivência do nosso planeta.',
     image: {
-      src: '/assets/images/thumbnail_youtube.jpeg',
+      src: '/assets/images/01.jpeg',
       alt: 'FazGame Eletrobras'
     },
     video: 'https://www.youtube.com/embed/HHwD-XNMzL8'
@@ -17,16 +17,27 @@ export const home = {
     }
   },
   thirdSection: {
-    title: 'Assista a nossa live de abertura',
+    title: 'Assista a nossas lives',
     image: {
       src: '/assets/images/thumbnail_youtube.jpeg',
       alt: 'FazGame Eletrobras'
     },
     video: 'https://www.youtube.com/embed/BUqddqxQgIA',
     videos: [
-      'https://www.youtube.com/embed/QH2-TGUlwu4',
-      'https://www.youtube.com/embed/QH2-TGUlwu4',
-      'https://www.youtube.com/embed/QH2-TGUlwu4'
+      {
+        image: {
+          src: '/assets/images/02.jpeg',
+          alt: 'FazGame Eletrobras'
+        },
+        video: 'https://www.youtube.com/embed/BUqddqxQgIA'
+      },
+      {
+        image: {
+          src: '/assets/images/03.jpeg',
+          alt: 'FazGame Eletrobras'
+        },
+        video: 'https://www.youtube.com/embed/ie_r3CCjtpg'
+      }
     ]
   },
   fourthSection: {
