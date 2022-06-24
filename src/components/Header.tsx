@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { BiDirections } from 'react-icons/bi'
 import { BsInfoLg, BsPencilSquare } from 'react-icons/bs'
 import { HiOutlineClipboardList } from 'react-icons/hi'
+import { IoMdTrophy } from 'react-icons/io'
 
 import { data } from '../../_data'
 
@@ -19,7 +20,8 @@ const icons = {
   BsInfoLg,
   BsPencilSquare,
   BiDirections,
-  HiOutlineClipboardList
+  HiOutlineClipboardList,
+  IoMdTrophy
 }
 
 function NavLink({ title, url, icon, color, active }: NavLinkProps) {

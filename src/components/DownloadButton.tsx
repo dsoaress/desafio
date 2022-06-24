@@ -1,10 +1,20 @@
+import cn from 'classnames'
 import { ButtonHTMLAttributes } from 'react'
 import { FaRegFilePdf } from 'react-icons/fa'
 
-export function DownloadButton({ children, ...props }: ButtonHTMLAttributes<HTMLButtonElement>) {
+type DownloadButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  dark?: boolean
+}
+
+export function DownloadButton({ children, dark = false, ...props }: DownloadButtonProps) {
   return (
     <button
-      className=" p-2 rounded-md text-center relative transition-opacity duration-200 hover:opacity-90 flex flex-col text-white mx-auto mt-12"
+      className={cn(
+        'p-2 rounded-md text-center relative transition-opacity duration-200 hover:opacity-90 flex flex-col text-white mx-auto mt-12',
+        {
+          'text-neutral-600': dark
+        }
+      )}
       type="button"
       {...props}
     >
@@ -12,7 +22,11 @@ export function DownloadButton({ children, ...props }: ButtonHTMLAttributes<HTML
         <FaRegFilePdf size={56} />
       </div>
 
-      <span className="text-white text-xs leading-none flex justify-center items-center flex-1">
+      <span
+        className={cn('text-white text-xs leading-none flex justify-center items-center flex-1', {
+          'text-neutral-600': dark
+        })}
+      >
         {children}
       </span>
     </button>

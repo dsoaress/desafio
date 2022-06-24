@@ -18,6 +18,12 @@ export const nav = [
     color: '#005e67'
   }
   // {
+  //   title: 'Premiação',
+  //   url: '/premiacao',
+  //   icon: 'IoMdTrophy',
+  //   color: '#1ca0b1'
+  // }
+  // {
   //   title: 'Inscrições',
   //   url: '/inscricoes',
   //   icon: 'BsPencilSquare',
