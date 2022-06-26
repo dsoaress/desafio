@@ -82,7 +82,7 @@ function Winners() {
         src: '/assets/images/winner-1.png',
         alt: 'Vencedores do 1º ano'
       },
-      gameUrl: 'https://fazgame.com.br/published_games/2604',
+      gameUrl: 'https://www.fazgame.com.br/game_publicados/2604',
       gameName: 'Vento Áureo',
       authors: {
         teacher: 'Mariana Rodrigues de Almeida',
@@ -98,7 +98,7 @@ function Winners() {
         src: '/assets/images/winner-2.png',
         alt: 'Vencedores do 2º ano'
       },
-      gameUrl: 'https://fazgame.com.br/published_games/2662',
+      gameUrl: 'https://www.fazgame.com.br/game_publicados/2662',
       gameName: 'Um futuro eletrizante',
       authors: {
         teacher: 'Ricardo de Magalhães Simões',
@@ -180,7 +180,7 @@ function Mentions() {
         src: '/assets/images/mention-1-1.png',
         alt: 'Menção do 1º ano'
       },
-      gameUrl: 'https://fazgame.com.br/published_games/2607',
+      gameUrl: 'https://www.fazgame.com.br/game_publicados/2607',
       gameName: 'Jornada das 5 peças',
       authors: {
         teacher: 'Gizele Gondim de Souza',
@@ -194,7 +194,7 @@ function Mentions() {
         src: '/assets/images/mention-1-2.png',
         alt: 'Menção do 1º ano'
       },
-      gameUrl: 'https://fazgame.com.br/published_games/2541',
+      gameUrl: 'https://www.fazgame.com.br/game_publicados/2541',
       gameName: 'Em Busca de Energia',
       authors: {
         teacher: 'Olavo José Luiz Junior',
@@ -208,7 +208,7 @@ function Mentions() {
         src: '/assets/images/mention-1-3.png',
         alt: 'Menção do 1º ano'
       },
-      gameUrl: 'https://fazgame.com.br/published_games/2562',
+      gameUrl: 'https://www.fazgame.com.br/game_publicados/2562',
       gameName: 'Solução eólica',
       authors: {
         teacher: 'Francisco Fernandes Neto',
@@ -222,7 +222,7 @@ function Mentions() {
         src: '/assets/images/mention-1-4.png',
         alt: 'Menção do 1º ano'
       },
-      gameUrl: 'https://fazgame.com.br/published_games/2547',
+      gameUrl: 'https://www.fazgame.com.br/game_publicados/2547',
       gameName: 'João e a energia eólica',
       authors: {
         teacher: 'Eduardo Alberto Felippsen',
@@ -239,7 +239,7 @@ function Mentions() {
         src: '/assets/images/mention-2-1.png',
         alt: 'Menção do 2º ano'
       },
-      gameUrl: 'https://fazgame.com.br/published_games/2561',
+      gameUrl: 'https://www.fazgame.com.br/game_publicados/2561',
       gameName: 'Energia... do sol?',
       authors: {
         teacher: 'Marcelo da Silva Carvalho',
@@ -253,7 +253,7 @@ function Mentions() {
         src: '/assets/images/mention-2-2.png',
         alt: 'Menção do 2º ano'
       },
-      gameUrl: 'https://fazgame.com.br/published_games/2516',
+      gameUrl: 'https://www.fazgame.com.br/game_publicados/2516',
       gameName: 'Energia Limpa Salva Vidas',
       authors: {
         teacher: 'Karina Rodrigues Ferreira',
@@ -267,7 +267,7 @@ function Mentions() {
         src: '/assets/images/mention-2-3.png',
         alt: 'Menção do 2º ano'
       },
-      gameUrl: 'https://fazgame.com.br/published_games/2583',
+      gameUrl: 'https://www.fazgame.com.br/game_publicados/2583',
       gameName: 'Sol em Tupi',
       authors: {
         teacher: 'Thiago da Silva Cavalcante',
@@ -281,7 +281,7 @@ function Mentions() {
         src: '/assets/images/mention-2-4.png',
         alt: 'Menção do 2º ano'
       },
-      gameUrl: 'https://www.fazgame.com.br/published_games/2629',
+      gameUrl: 'https://www.fazgame.com.br/game_publicados/2629',
       gameName: 'Solaris',
       authors: {
         teacher: 'Andreia Regina Gallego Martins',
@@ -325,7 +325,9 @@ export default function Premiacao() {
 
       <DownloadButton
         dark
-        onClick={() => saveAs('/assets/pdfs/notas.pdf', `/assets/pdfs/notas.pdf`)}
+        onClick={() =>
+          saveAs('/assets/pdfs/avaliacao_desafio_fazgame.pdf', `avaliacao_desafio_fazgame.pdf`)
+        }
       >
         Baixar notas
       </DownloadButton>
