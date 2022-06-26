@@ -67,7 +67,7 @@ export function Header() {
       </div>
 
       <nav className="w-full flex justify-center">
-        <ul className="grid sm:grid-cols-2 gap-4 lg:grid-cols-3 my-12 w-full">
+        <ul className="grid sm:grid-cols-2 gap-4 lg:grid-cols-4 my-12 w-full">
           {data.nav.map(link => (
             <li key={link.url}>
               <NavLink

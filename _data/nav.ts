@@ -16,13 +16,13 @@ export const nav = [
     url: '/regulamento',
     icon: 'HiOutlineClipboardList',
     color: '#005e67'
+  },
+  {
+    title: 'Premiação',
+    url: '/premiacao',
+    icon: 'IoMdTrophy',
+    color: '#1ca0b1'
   }
-  // {
-  //   title: 'Premiação',
-  //   url: '/premiacao',
-  //   icon: 'IoMdTrophy',
-  //   color: '#1ca0b1'
-  // }
   // {
   //   title: 'Inscrições',
   //   url: '/inscricoes',
