@@ -57,16 +57,16 @@ function Winner({ title, desc, image, gameUrl, gameName, authors }: WinnerProps)
         </p>
 
         <p>
-          <strong>Professor:</strong> {authors.teacher}
+          Professor: <strong>{authors.teacher}</strong>
         </p>
         <p>
-          <strong>Aluno(a):</strong> {authors.student}
+          Aluno(a): <strong>{authors.student}</strong>
         </p>
         <p>
-          <strong>Escola:</strong> {authors.school}
+          Escola: <strong>{authors.school}</strong>
         </p>
         <p>
-          <strong>UF:</strong> {authors.state}
+          UF: <strong>{authors.state}</strong>
         </p>
       </div>
     </div>
@@ -133,16 +133,16 @@ function Mention({ image, gameUrl, gameName, authors }: MentionProps) {
       </p>
 
       <p>
-        <strong>Professor:</strong> {authors.teacher}
+        Professor: <strong>{authors.teacher}</strong>
       </p>
       <p>
-        <strong>Aluno(a):</strong> {authors.student}
+        Aluno(a): <strong>{authors.student}</strong>
       </p>
       <p>
-        <strong>Escola:</strong> {authors.school}
+        Escola: <strong>{authors.school}</strong>
       </p>
       <p>
-        <strong>UF:</strong> {authors.state}
+        UF: <strong>{authors.state}</strong>
       </p>
     </div>
   )
@@ -185,7 +185,7 @@ function Mentions() {
       authors: {
         teacher: 'Gizele Gondim de Souza',
         student: 'Giovane Oliveira Carvalho',
-        school: 'Colégio Militar da Polícia Militar 1',
+        school: 'Colégio Militar da Polícia Militar',
         state: 'AM'
       }
     },
@@ -199,7 +199,7 @@ function Mentions() {
       authors: {
         teacher: 'Olavo José Luiz Junior',
         student: 'Pedro Henrique Baron Goettens ',
-        school: 'Instituto Federal do Paraná campus Assis Chateaubriand',
+        school: 'Instituto Federal do Paraná - Campus Assis Chateaubriand',
         state: 'PR'
       }
     },
@@ -227,7 +227,7 @@ function Mentions() {
       authors: {
         teacher: 'Eduardo Alberto Felippsen',
         student: 'Lázaro Marques Dourado Arent',
-        school: 'Instituto Federal do Paraná Campus Assis Chateaubriand',
+        school: 'Instituto Federal do Paraná - Campus Assis Chateaubriand',
         state: 'PR'
       }
     }
