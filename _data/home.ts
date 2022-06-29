@@ -44,6 +44,13 @@ export const home = {
           alt: 'FazGame Eletrobras'
         },
         video: 'https://www.youtube.com/embed/B54dAzc48c0'
+      },
+      {
+        image: {
+          src: '/assets/images/05.png',
+          alt: 'FazGame Eletrobras'
+        },
+        video: 'https://www.youtube.com/embed/rb4F55v1MYU'
       }
     ]
   },

@@ -61,7 +61,7 @@ const Home: NextPage = () => {
       <Section className="bg-neutral-200 -mx-6 md:-mx-8 lg:-mx-10 px-6 md:px-8 lg:px-10 py-12">
         <div className="mx-auto w-full">
           <Title>{thirdSection.title}</Title>
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-4">
             {thirdSection.videos.map(({ image, video }) => (
               <VideoModal key={video} video={video}>
                 <Image src={image.src} alt={image.alt} objectFit="contain" layout="fill" />
