@@ -75,7 +75,7 @@ export const footer = {
           url: 'https://eletrobras.com/pt/Paginas/Home.aspx'
         },
         {
-          src: '/assets/images/mme_hor.png',
+          src: '/assets/images/mme.png',
           alt: 'Ministério de Minas e Energia',
           url: 'https://www.gov.br/mme/pt-br'
         }

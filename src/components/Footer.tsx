@@ -106,7 +106,7 @@ export function Footer() {
 
           <div>
             <Title>{thirdSection.secondBlock.title}</Title>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col items-center justify-center gap-8">
               {thirdSection.secondBlock.logos.map(logo => (
                 <div key={logo.url} className="relative w-full h-8">
                   <a
